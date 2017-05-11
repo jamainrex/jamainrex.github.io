@@ -5,4 +5,4 @@
  * Date: 21/01/2016
  * Time: 15:18
  */
-header('Location:/index.html');
+header('Location: https://github.com/jamainrex?tab=repositories');

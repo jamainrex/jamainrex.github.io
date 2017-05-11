@@ -21,7 +21,6 @@
                 <tr>
                     <td align="center" valign="top"  class='menucl' >
                         Henry Charl Gwapo!!!
-                        <img src="https://pbs.twimg.com/profile_images/387029952/smeagol.jpg" class="img-responsive">
                         <FORM name="extractor">
                             <TABLE bgcolor="#CCCCCC" cellpadding=1 cellspacing=0 border=0>
                                 <TR>
