@@ -1,0 +1,233 @@
+keep application running
+Consolidate classes for autoload (PSR-0)
+Convert globals to injected dependencies
+
+Why autoload?
+To remove as many include_onces / require_onces as we can
+So we can find out which parts of the script are loading logic and which parts are loading definition
+
+So you know that all the includes are actually doing something, not just loading up definitions
+
+PSR-0
+Class name maps directly to file name
+Namespace separators map directly to directory separators
+Class name underscores also map to directory separators
+
+eg Vendor\Package_Name\Example_Name maps to
+   Vendor/Package_name/Example/Name.php
+   
+TODO 1: CREATE AUTOLOADER:
+
+MOVE CLASSES
+
+Move class files to same base path
+If you have more than one class per file, split them out into their own files, one for each class
+If you define classes as part of a script, extract to own file
+One class at a time, test each class, one class at a time
+Remove include/require as you go (grep)
+If needed, change names as you go (grep)
+
+MOVE FUNCTIONS
+
+Many projects have files of function definitions
+Wrap the function in a class as static or instance methods
+Move to classes directory
+Change calls to static or instance calls (grep)
+Remove include/require as you go (grep)
+
+eg
+
+ORIGINAL FUNCTION
+
+function fetch_results()
+{
+    global $db;
+    $results = $db->fetch('whatever');
+    return $results;
+}
+$results = fetch_results();
+
+CLASSIFICATED
+Static method
+
+class Example
+{
+    public static function fetch_results()
+    {
+        global $db;
+        $results = $db->fetch('whatever');
+        return $results;
+    }
+}
+$results = Example::fetch_results();
+
+* * * Instance method = EASIER FOR TESTING * * *
+
+class Example
+{
+    public function fetch_results()
+    {
+        global $db;
+        $results = $db->fetch('whatever');
+        return $results;
+    }
+}
+$example = new Example;
+$results = $example->fetch_results();
+
+2 - CONVERT GLOBALS TO INJECTED DEPENDENCIES
+
+class Example
+{
+    public function fetchResults()
+    {
+        $db = new Database('username', 'password');
+        return $db->fetch('whatever');
+    }
+}
+
+To reuse db connections and not create new db connection each time:
+
+$db = new Database('username', 'password');
+
+class Example
+{
+    public function fetchResults()
+    {
+        global $db;
+        return $db->fetch('whatever');
+    }
+}
+
+PROBLEM:
+
+class Evil
+{
+    public function actionAtADistance()
+    {
+        global $db;
+        unset($db);
+    }
+}
+
+SO: As an interim measure, move the global bit into the constructor:
+
+class Example
+{
+    public function __construct()
+    {
+        global $db;
+        $this->db = $db;
+    }
+    
+    public function fetchResults()
+    {
+        return $this->db->fetch('whatever');
+    }
+}
+
+Now make the database connection a dependency that is injected:
+
+class Example
+{
+    public function __construct($db)
+    {
+        $this->db = $db;
+    }
+    
+    public function fetchResults()
+    {
+        return $this->db->fetch('whatever');
+    }
+}
+
+MUST CHANGE ALL NEW INSTANTIOTIONS TO PASS DEPENDENCIES (grep)
+CLASS INSTANTIATIONS INSIDE METHODS? PASS INTERMEDIARY DEPENDENCIES INSTEAD (grep)
+
+class Example
+{
+    public function fetchResults()
+    {
+        global $db;
+        return $db->fetch('whatever');
+    }
+}
+
+class Service
+{
+    public function action()
+    {
+        $example - new Example;
+        return $example->fetchResults();
+    }
+}
+
+REMOVING DEPENDENCY CREATES A CONSTRUCTOR ASKING FOR AN INJECTION IT'S NOT GOING TO USE - IT'S JUST GOING TO PASS IT ON TO THE OBJECT IT CREATES THIS IS WRONG(ISH) BUT IT'S AN INTERMEDIARY STEP
+
+class Example
+{
+    public function __construct($db)
+    {
+        $this->db = $db;
+    }
+
+    public function fetchResults()
+    {
+        return $this->db->fetch('whatever');
+    }
+}
+
+class Service
+{
+    public function __construct($db)
+    {
+        $this->db = $db;
+    }
+
+    public function action()
+    {
+        $example = new Example($this->db);
+        return $example->fetchResults();
+    }
+}
+
+LAW OF DEMETER - don't pass in the db connection, pass in the whole example object!
+
+class Example
+{
+    public function __construct($db)
+    {
+        $this->db = $db;
+    }
+
+    public function fetchResults()
+    {
+        return $this->db->fetch('whatever');
+    }
+}
+
+class Service
+{
+    public function __construct($example)
+    {
+        $this->example = $example;
+    }
+
+    public function action()
+    {
+        return $this->example->fetchResults();
+    }
+}
+
+PROGRESSION OF INSTANTIATION:
+//all globals : bad
+$service = new Service; // what are the dependencies??? All hidden magic...
+
+//intermediary - some DI but Service creates Example internally
+$db = new Database('username', 'password');
+$service = new Service($db);
+
+//all DI all the time - now you can write unit tests for it!
+$db = new Database('username', 'password');
+$example = new Example($db);
+$service = new Service($example);
