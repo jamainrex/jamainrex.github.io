@@ -123,6 +123,7 @@
                                 if (separator == "new") separator = "\n";
                                 if (separator == "other") separator = document.extractor.othersep.value;
                                 var rawemail = document.extractor.rawdata.value.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi);
+                                rawemail = rawemail.replace("'+'@'+'", "@");
                                 var norepeat = new Array();
                                 if (rawemail) {
                                     for (var i=0; i<rawemail.length; i++) {
