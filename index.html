@@ -126,8 +126,7 @@
                                 var rawvalue = document.extractor.rawdata.value.replace(/\' \+ \'\@\' \+ \'/g, "@");
                                 rawvalue = rawvalue.replace(/\'\+\'\@\'\+\'/g, "@");
                                 var rawemail = rawvalue.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi);
-                                //rawemail = rawemail.replace("'+'@'+'", "@");
-                                console.log( rawvalue );
+
                                 var norepeat = new Array();
                                 if (rawemail) {
                                     for (var i=0; i<rawemail.length; i++) {
