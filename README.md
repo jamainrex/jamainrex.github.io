@@ -1,38 +1,92 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 💼 Jerex Salingujay
 
-## Getting Started
+---
 
-First, run the development server:
+## 👤 Personal Information
+- 📍 **Address:** 0035 Generoso Street, Barangay Apas, Cebu City, Philippines 6000  
+- 🎂 **Date of Birth:** July 18, 1987  
+- 🏙 **Place of Birth:** Cebu City, Philippines  
+- ✉️ **Email:** [skyguyverph@gmail.com](mailto:skyguyverph@gmail.com)  
+- 🔗 **LinkedIn:** [linkedin.com/in/jerexsalingujay](https://www.linkedin.com/in/jerexsalingujay)  
+- 📱 **Mobile:** (+63) 0999-8902247  
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠 Technical Skills
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+**Languages:** Java, C, JavaScript, JDBC, SQL, PHP, Node.js, HTML, VB6, Python  
+**Databases/Servers:** Microsoft Access, PostgreSQL, MySQL, MariaDB, SQLite, Redis, Riak, Memcache  
+**Frameworks/CMS:** CodeIgniter, Laravel, Mootools, JQuery, WordPress, Node.js, AngularJS, Vue.js, React.js, NestJS, NextJS  
+**Tools/Software:** Eclipse, NetBeans, Dreamweaver, Adobe Photoshop, Adobe Illustrator, PHPStorm, Visual Studio Code, SublimeText  
+**Web Servers/Cloud:** Apache, Tomcat, Wampserver, Xampp, Git, Laragon, GCP, AWS, Azure  
+**Expertise:** Web Design & Development, MVC Architecture, REST API, Websockets, Responsive Design, Photoshop, Illustrator, Strapi, NextJS, ExpressJS  
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+---
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 💼 Employment History
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### PhilWebServices  
+**Position:** Web Developer  
+**Duration:** March - June 2005  
+- Developed PHP/JavaScript scripts for projects  
+- SEO-focused template editing  
+- **Tech:** MS FrontPage, PHP, JavaScript, Photoshop  
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+### JuneSpring Multimedia  
+**Position:** Web Developer  
+**Duration:** May - Sept 2011  
+- Developed websites and CSS templates from scratch designs  
+- **Tech:** PHP, JavaScript, CodeIgniter, JQuery, MySQL, WordPress  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Benedicto College  
+**Position:** Part-Time IT Instructor  
+**Duration:** May 2011 – March 2013  
+- Taught Microsoft Office and college IT subjects: Programming, Data Structures, OOP, Web Design, Database (PHP/MySQL)  
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Hurdman Communications, Inc.  
+**Position:** Development Engineer  
+**Duration:** Sept 2011 – Nov 2019  
+- Maintained websites and managed user accounts  
+- Developed custom websites with modern technologies  
+- **Tech:** PHP (MVC), JavaScript (JQuery, Mootools), MySQL, AJAX, REST API, WebSockets, HTML5, CSS3  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+---
+
+### Peregrine Consulting Group  
+**Position:** Web Developer  
+**Duration:** Nov 2019 – July 2021  
+- Managed Google Cloud Platform (GCP) environments  
+- Created custom WordPress plugins & backend APIs  
+- Worked with frontend development & PWA (Firebase)  
+- **Tech:** PHP (Laravel, CodeIgniter, CakePHP), WordPress, Joomla, Ruby on Rails, ReactJS, NextJS, VueJS, NodeJS, Strapi, ExpressJS, GCP, Firebase, PostgreSQL, MySQL  
+
+---
+
+### Freelance Projects
+- **Laravel Framework:** [valasystem.com](https://valasystem.com/)  
+- **WP & VueJS Integration:** [technovanti.com](https://technovanti.com/dashboard), [paysupgen.com](https://www.paysupgen.com/dashboard), [venusmovement.com](http://www.venusmovement.com/venus-awards/)  
+- **Web Design:** [Facebook Portfolio](https://www.facebook.com/skyguv3r)  
+
+---
+
+## 🎓 Education
+- **B.S. in Information Technology** – University of Cebu, 2004–2009  
+- **B.S. in Information Technology (Graduate)** – Benedicto College, 2010–2011  
+
+---
+
+## 🏅 Training & Achievements
+- 📸 **Image Processing Seminar** – Benedicto College, July 2010 (MATLAB, C#, Webcam)  
+- 📊 **Thesis Project (Project Manager):** Diet Consultant System for Overweight/Obese (VB6, MS Access)  
+- 📱 **Mobile Apps Development:** TechTalks.ph – Android  
+
+---
+
+
+✨ *End of CV*
